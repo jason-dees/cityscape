@@ -1,27 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="City_Scape" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q0u-CS-Qhh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="Scene View" translatesAutoresizingMaskIntoConstraints="NO" id="Ix7-aq-sHZ" userLabel="Scene View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BV1-FR-VrT" id="HjR-Y5-tJz"/>
+                                </connections>
+                            </arscnView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9x-OE-VR1" userLabel="Session Info View">
+                                <rect key="frame" x="16" y="621" width="222" height="38"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1EO-cP-9jb">
+                                    <rect key="frame" x="0.0" y="0.0" width="222" height="38"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fake news goes here bro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF4-WY-Dcx" userLabel="Session Info Label">
+                                            <rect key="frame" x="8" y="8" width="200" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ZLG-cC-qh6"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="aiB-Mh-J7J"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="kF4-WY-Dcx" secondAttribute="bottom" constant="8" id="FQv-nI-fYk"/>
+                                        <constraint firstItem="kF4-WY-Dcx" firstAttribute="leading" secondItem="1EO-cP-9jb" secondAttribute="leading" constant="8" id="MMc-7o-YvV"/>
+                                        <constraint firstItem="kF4-WY-Dcx" firstAttribute="top" secondItem="1EO-cP-9jb" secondAttribute="top" constant="8" id="OMG-uN-eDv"/>
+                                        <constraint firstAttribute="trailing" secondItem="kF4-WY-Dcx" secondAttribute="trailing" constant="14" id="mGj-9G-PM9"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="WNm-I6-FZd"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ix7-aq-sHZ" firstAttribute="bottom" secondItem="Rjo-Cw-yDu" secondAttribute="bottom" id="6o6-P2-SdC"/>
+                            <constraint firstItem="Ix7-aq-sHZ" firstAttribute="top" secondItem="q0u-CS-Qhh" secondAttribute="top" id="FoW-Vx-aav"/>
+                            <constraint firstItem="u9x-OE-VR1" firstAttribute="leading" secondItem="q0u-CS-Qhh" secondAttribute="leadingMargin" id="GaS-uQ-yYw"/>
+                            <constraint firstItem="Rjo-Cw-yDu" firstAttribute="trailing" secondItem="Ix7-aq-sHZ" secondAttribute="trailing" id="NrR-0C-CXw"/>
+                            <constraint firstItem="Ix7-aq-sHZ" firstAttribute="leading" secondItem="Rjo-Cw-yDu" secondAttribute="leading" id="cq0-BV-DLR"/>
+                            <constraint firstItem="Rjo-Cw-yDu" firstAttribute="bottom" secondItem="u9x-OE-VR1" secondAttribute="bottom" constant="8" id="p2h-Wo-Fbu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rjo-Cw-yDu"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="sceneView" destination="Ix7-aq-sHZ" id="EKX-oF-LW4"/>
+                        <outlet property="sessionInfoLabel" destination="kF4-WY-Dcx" id="7wu-7X-mUJ"/>
+                        <outlet property="sessionInfoView" destination="u9x-OE-VR1" id="JTN-Bo-TAQ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>

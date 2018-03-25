@@ -14,6 +14,7 @@
 		A3192105205D5F030049468B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3192104205D5F030049468B /* Assets.xcassets */; };
 		A3192108205D5F030049468B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3192106205D5F030049468B /* LaunchScreen.storyboard */; };
 		A3192113205D5F040049468B /* City_ScapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3192112205D5F040049468B /* City_ScapeTests.swift */; };
+		A31921222067EDFB0049468B /* MainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31921212067EDFB0049468B /* MainNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A319210E205D5F040049468B /* City ScapeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "City ScapeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3192112205D5F040049468B /* City_ScapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_ScapeTests.swift; sourceTree = "<group>"; };
 		A3192114205D5F040049468B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A31921212067EDFB0049468B /* MainNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				A3192104205D5F030049468B /* Assets.xcassets */,
 				A3192106205D5F030049468B /* LaunchScreen.storyboard */,
 				A3192109205D5F030049468B /* Info.plist */,
+				A31921212067EDFB0049468B /* MainNode.swift */,
 			);
 			path = "City Scape";
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3192100205D5F030049468B /* ViewController.swift in Sources */,
+				A31921222067EDFB0049468B /* MainNode.swift in Sources */,
 				A31920FC205D5F030049468B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8D7T2DDDN;
 				INFOPLIST_FILE = "City Scape/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jhdees.City-Scape";
@@ -372,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G8D7T2DDDN;
 				INFOPLIST_FILE = "City Scape/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jhdees.City-Scape";
