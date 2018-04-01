@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,6 @@
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="City_Scape" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q0u-CS-Qhh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -55,15 +54,24 @@
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbd-PV-WMb">
+                                <rect key="frame" x="279" y="629" width="88" height="30"/>
+                                <state key="normal" title="Show Planes"/>
+                                <connections>
+                                    <action selector="showHideButtonTouchUp:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Puh-3u-V2X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ix7-aq-sHZ" firstAttribute="bottom" secondItem="Rjo-Cw-yDu" secondAttribute="bottom" id="6o6-P2-SdC"/>
                             <constraint firstItem="Ix7-aq-sHZ" firstAttribute="top" secondItem="q0u-CS-Qhh" secondAttribute="top" id="FoW-Vx-aav"/>
                             <constraint firstItem="u9x-OE-VR1" firstAttribute="leading" secondItem="q0u-CS-Qhh" secondAttribute="leadingMargin" id="GaS-uQ-yYw"/>
+                            <constraint firstItem="Rjo-Cw-yDu" firstAttribute="trailing" secondItem="Kbd-PV-WMb" secondAttribute="trailing" constant="8" id="Lrd-9e-TUR"/>
                             <constraint firstItem="Rjo-Cw-yDu" firstAttribute="trailing" secondItem="Ix7-aq-sHZ" secondAttribute="trailing" id="NrR-0C-CXw"/>
                             <constraint firstItem="Ix7-aq-sHZ" firstAttribute="leading" secondItem="Rjo-Cw-yDu" secondAttribute="leading" id="cq0-BV-DLR"/>
                             <constraint firstItem="Rjo-Cw-yDu" firstAttribute="bottom" secondItem="u9x-OE-VR1" secondAttribute="bottom" constant="8" id="p2h-Wo-Fbu"/>
+                            <constraint firstItem="Rjo-Cw-yDu" firstAttribute="bottom" secondItem="Kbd-PV-WMb" secondAttribute="bottom" constant="8" id="s9Y-Rj-J6b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rjo-Cw-yDu"/>
                     </view>
@@ -71,8 +79,10 @@
                         <outlet property="sceneView" destination="Ix7-aq-sHZ" id="EKX-oF-LW4"/>
                         <outlet property="sessionInfoLabel" destination="kF4-WY-Dcx" id="7wu-7X-mUJ"/>
                         <outlet property="sessionInfoView" destination="u9x-OE-VR1" id="JTN-Bo-TAQ"/>
+                        <outlet property="showHidePlanesButton" destination="Kbd-PV-WMb" id="mxg-4t-ElG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
         </scene>

@@ -15,6 +15,9 @@
 		A3192108205D5F030049468B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3192106205D5F030049468B /* LaunchScreen.storyboard */; };
 		A3192113205D5F040049468B /* City_ScapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3192112205D5F040049468B /* City_ScapeTests.swift */; };
 		A31921222067EDFB0049468B /* MainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31921212067EDFB0049468B /* MainNode.swift */; };
+		A339A78A206FED0800059115 /* PlacementNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A339A789206FED0800059115 /* PlacementNode.swift */; };
+		A3BCA2C920714F9000BCF537 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BCA2C820714F9000BCF537 /* SceneDelegate.swift */; };
+		A3BCA2CC207150D200BCF537 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BCA2CB207150D200BCF537 /* SessionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		A3192112205D5F040049468B /* City_ScapeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City_ScapeTests.swift; sourceTree = "<group>"; };
 		A3192114205D5F040049468B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A31921212067EDFB0049468B /* MainNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNode.swift; sourceTree = "<group>"; };
+		A339A789206FED0800059115 /* PlacementNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementNode.swift; sourceTree = "<group>"; };
+		A3BCA2C820714F9000BCF537 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A3BCA2CB207150D200BCF537 /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 		A31920FA205D5F030049468B /* City Scape */ = {
 			isa = PBXGroup;
 			children = (
+				A3BCA2CA207150AB00BCF537 /* Visibles */,
+				A3BCA2C720714F8100BCF537 /* Delegates */,
 				A31920FB205D5F030049468B /* AppDelegate.swift */,
 				A31920FD205D5F030049468B /* art.scnassets */,
 				A31920FF205D5F030049468B /* ViewController.swift */,
@@ -88,7 +96,6 @@
 				A3192104205D5F030049468B /* Assets.xcassets */,
 				A3192106205D5F030049468B /* LaunchScreen.storyboard */,
 				A3192109205D5F030049468B /* Info.plist */,
-				A31921212067EDFB0049468B /* MainNode.swift */,
 			);
 			path = "City Scape";
 			sourceTree = "<group>";
@@ -100,6 +107,24 @@
 				A3192114205D5F040049468B /* Info.plist */,
 			);
 			path = "City ScapeTests";
+			sourceTree = "<group>";
+		};
+		A3BCA2C720714F8100BCF537 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A3BCA2C820714F9000BCF537 /* SceneDelegate.swift */,
+				A3BCA2CB207150D200BCF537 /* SessionDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		A3BCA2CA207150AB00BCF537 /* Visibles */ = {
+			isa = PBXGroup;
+			children = (
+				A31921212067EDFB0049468B /* MainNode.swift */,
+				A339A789206FED0800059115 /* PlacementNode.swift */,
+			);
+			path = Visibles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Jason Dees";
 				TargetAttributes = {
 					A31920F7205D5F030049468B = {
@@ -206,7 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3BCA2C920714F9000BCF537 /* SceneDelegate.swift in Sources */,
 				A3192100205D5F030049468B /* ViewController.swift in Sources */,
+				A339A78A206FED0800059115 /* PlacementNode.swift in Sources */,
+				A3BCA2CC207150D200BCF537 /* SessionDelegate.swift in Sources */,
 				A31921222067EDFB0049468B /* MainNode.swift in Sources */,
 				A31920FC205D5F030049468B /* AppDelegate.swift in Sources */,
 			);
@@ -264,6 +292,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -271,6 +300,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -321,6 +351,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -328,6 +359,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -364,6 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8D7T2DDDN;
 				INFOPLIST_FILE = "City Scape/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jhdees.City-Scape";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,6 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G8D7T2DDDN;
 				INFOPLIST_FILE = "City Scape/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jhdees.City-Scape";
 				PRODUCT_NAME = "$(TARGET_NAME)";
