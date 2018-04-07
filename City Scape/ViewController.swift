@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-class ViewController: UIViewController,  ARSessionDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var sessionInfoView: UIView!
@@ -23,19 +23,9 @@ class ViewController: UIViewController,  ARSessionDelegate {
         // Create a new scene
         sceneDelegate = SceneDelegate()
         sessionDelegate = SessionDelegate(label: sessionInfoLabel, view: sessionInfoView)
-        if let view = self.view as? ARSCNView {
-            sceneView = view
-            sceneView!.delegate = sceneDelegate
-            // Set a delegate to track the number of plane anchors for providing UI feedback.
-            //make a folder called "Delegates"
-            // - SceneViewDelegate(Takes in mainNode, pointer to otherPlanes?)
-            //      * Has Nodes
-            //      * Has render methods
-            // - SessionDelegate(sessionInfoLabel, sessionInfoView)
-            //      * Does the messaging thing
-            sceneView!.session.delegate = sessionDelegate
-            sceneView.showsStatistics = true
-        }
+        sceneView!.delegate = sceneDelegate
+        sceneView!.session.delegate = sessionDelegate
+        sceneView.showsStatistics = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -49,7 +49,7 @@ class PlacementNode : SCNNode {
     }
     
     override func removeFromParentNode() {
-        self.removeFromParentNode()
+        super.removeFromParentNode()
         hasRendered = false;
     }
 }
