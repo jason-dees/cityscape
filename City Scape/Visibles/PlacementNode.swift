@@ -38,6 +38,7 @@ class PlacementNode : SCNNode {
     func setPosition(planeAnchor: ARPlaneAnchor) {
         
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+        plane.firstMaterial?.diffuse.contents = UIColor.green
         
         planeNode?.geometry = plane
         

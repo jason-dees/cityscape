@@ -40,6 +40,7 @@ class SceneDelegate : NSObject, ARSCNViewDelegate {
         if(!mainNode.hasRendered){
             mainNode.setPosition(planeAnchor: planeAnchor)
             node.addChildNode(mainNode)
+            return
         }
         let newNode = PlacementNode()
         newNode.setPosition(planeAnchor: planeAnchor)
