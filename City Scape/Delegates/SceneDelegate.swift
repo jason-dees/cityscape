@@ -56,6 +56,7 @@ class SceneDelegate : NSObject, ARSCNViewDelegate {
             }
         }
         else{
+            //there is an issue with stacking planes
             for otherPlane in otherPlanes.filter({ !$0.hasRendered }) {
                 node.addChildNode(otherPlane)
                 otherPlane.hasRendered = true

@@ -28,7 +28,7 @@ class MainNode : SCNNode {
     private func setup(){
         
         let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        shipNode = scene.rootNode.childNode(withName: "ship", recursively: false)
+        shipNode = scene.rootNode
         planeNode = SCNNode()
         planeNode.name = "plane"
         planeNode?.eulerAngles.x = -.pi / 2
@@ -36,6 +36,22 @@ class MainNode : SCNNode {
         
         self.addChildNode(shipNode)
         self.addChildNode(planeNode)
+        let constraint = SCNTransformConstraint(inWorldSpace: false, with:{
+            node, transformMatrix in
+            
+            let width = self.nodeWidth(node: self.planeNode)
+            let height = self.nodeHeight(node: self.planeNode)
+            let shipWidth = self.nodeWidth(node: node)
+            let shipHeight = self.nodeHeight(node: node)
+            var scale = width/shipWidth
+            if(width > height){
+                scale = height/shipHeight
+            }
+            node.scale = SCNVector3(scale, scale, scale)
+            node.position = self.planeNode.position
+            return node.transform
+            })
+        shipNode.constraints = [constraint]
     }
     
     func setPosition(planeAnchor: ARPlaneAnchor) {
@@ -44,16 +60,19 @@ class MainNode : SCNNode {
         
         planeNode?.geometry = plane
         
-        setPosition(x: planeAnchor.center.x, y: 0, z: planeAnchor.center.z)
-        
-        
         hasRendered = true
     }
     
-    private func setPosition(x: Float, y: Float, z: Float){
-        planeNode?.simdPosition = float3(x, y, z)
-        shipNode?.simdPosition = float3(x, y, z)
+    private func nodeWidth(node: SCNNode) -> Float{
+        let boundingMax = node.boundingBox.max
+        let boundingMin = node.boundingBox.min
+        return boundingMax.x + abs(boundingMin.x)
+    }
     
+    private func nodeHeight(node : SCNNode) -> Float{
+        let boundingMax = node.boundingBox.max
+        let boundingMin = node.boundingBox.min
+        return boundingMax.y + abs(boundingMin.y)
     }
 
 }

@@ -25,7 +25,7 @@
                                     <outlet property="delegate" destination="BV1-FR-VrT" id="HjR-Y5-tJz"/>
                                 </connections>
                             </arscnView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9x-OE-VR1" userLabel="Session Info View">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9x-OE-VR1" userLabel="Hmmm">
                                 <rect key="frame" x="16" y="621" width="222" height="38"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1EO-cP-9jb">
                                     <rect key="frame" x="0.0" y="0.0" width="222" height="38"/>
