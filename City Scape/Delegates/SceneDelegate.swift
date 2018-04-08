@@ -11,7 +11,21 @@ import ARKit
 
 class SceneDelegate : NSObject, ARSCNViewDelegate {
     
-    public var showNewPlacements: Bool =  false
+    var _showNewPlacements : Bool = false
+    public var showNewPlacements: Bool {
+        get {
+            return _showNewPlacements
+        }
+        set(newShowNewPlacements) {
+            _showNewPlacements = newShowNewPlacements
+            if(_showNewPlacements){
+                self.showOtherPlanes()
+            }
+            else{
+                self.hideOtherPlanes()
+            }
+        }
+    }
     
     var mainNode : MainNode!
     var otherPlanes : Array<PlacementNode> = Array()
@@ -45,23 +59,25 @@ class SceneDelegate : NSObject, ARSCNViewDelegate {
         let newNode = PlacementNode()
         newNode.setPosition(planeAnchor: planeAnchor)
         otherPlanes.append(newNode)
+        newNode.isHidden = !showNewPlacements
+        node.addChildNode(newNode)
     }
     
     /// - Tag: UpdateARContent
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         // Update content only for plane anchors and nodes matching the setup created in `renderer(_:didAdd:for:)`.
-        
-        if(!showNewPlacements){
-            for otherPlane in otherPlanes{
-                otherPlane.removeFromParentNode();
-            }
+    }
+    
+    func hideOtherPlanes(){
+        for otherPlane in otherPlanes{
+            otherPlane.isHidden = true
         }
-        else{
-            //there is an issue with stacking planes
-            for otherPlane in otherPlanes.filter({ !$0.hasRendered }) {
-                node.addChildNode(otherPlane)
-                otherPlane.hasRendered = true
-            }
+    }
+    
+    
+    func showOtherPlanes(){
+        for otherPlane in otherPlanes.filter({ !$0.hasRendered }) {
+            otherPlane.isHidden = false
         }
     }
 }

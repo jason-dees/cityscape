@@ -52,6 +52,7 @@ class ViewController: UIViewController {
     
     @IBAction func showHideButtonTouchUp(_ sender: Any) {
         sceneDelegate.showNewPlacements = !sceneDelegate.showNewPlacements
+        
         let titleString = sceneDelegate.showNewPlacements ? "Hide Planes" : "Show Planes"
         showHidePlanesButton.setTitle(titleString, for: .normal)
 
