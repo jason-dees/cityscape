@@ -12,6 +12,21 @@ import ARKit
 class SceneDelegate : NSObject, ARSCNViewDelegate {
     
     var _showNewPlacements : Bool = false
+    var _isFirst : Bool = true;
+    
+    var planes : Array<CityNode> = Array()
+    var displayedNode : CityNode {
+        get {
+            return planes.first(where:{ $0.isMain })!
+        }
+    }
+    
+    var otherPlanes : Array<CityNode> {
+        get {
+            return planes.filter({ !$0.isMain })
+        }
+    }
+    
     public var showNewPlacements: Bool {
         get {
             return _showNewPlacements
@@ -27,12 +42,8 @@ class SceneDelegate : NSObject, ARSCNViewDelegate {
         }
     }
     
-    var mainNode : MainNode!
-    var otherPlanes : Array<PlacementNode> = Array()
     
     override init(){
-        mainNode = MainNode()
-        mainNode.name = "MainNode"
     }
     
     // MARK: - ARSCNViewDelegate
@@ -51,16 +62,18 @@ class SceneDelegate : NSObject, ARSCNViewDelegate {
         
         // Create a SceneKit plane to visualize the plane anchor using its position and extent.
         
-        if(!mainNode.hasRendered){
-            mainNode.setPosition(planeAnchor: planeAnchor)
-            node.addChildNode(mainNode)
-            return
+        let newNode = CityNode()
+        newNode.planeAnchor = planeAnchor
+        newNode.isMain = _isFirst
+        if(_isFirst){
+            newNode.isHidden = false;
+            _isFirst = false;
         }
-        let newNode = PlacementNode()
-        newNode.setPosition(planeAnchor: planeAnchor)
-        otherPlanes.append(newNode)
-        newNode.isHidden = !showNewPlacements
+        else{
+            newNode.isHidden = !showNewPlacements
+        }
         node.addChildNode(newNode)
+        planes.append(newNode)
     }
     
     /// - Tag: UpdateARContent

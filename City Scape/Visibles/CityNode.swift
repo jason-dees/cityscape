@@ -9,11 +9,23 @@
 import Foundation
 import ARKit
 
-class MainNode : SCNNode {
+class CityNode : SCNNode {
     
     var shipNode : SCNNode!
     var planeNode : SCNNode!
     public private(set) var hasRendered: Bool =  false
+    public var isMain : Bool = false {
+        didSet{
+            let color = isMain ? UIColor.gray : UIColor.green
+            setPlaneNodeColor(color: color)
+            shipNode.isHidden = !isMain
+        }
+    };
+    public var planeAnchor: ARPlaneAnchor!{
+        didSet{
+            setPosition(nextPlaneAnchor: planeAnchor)
+        }
+    }
     
     override init(){
         super.init()
@@ -54,13 +66,27 @@ class MainNode : SCNNode {
         shipNode.constraints = [constraint]
     }
     
-    func setPosition(planeAnchor: ARPlaneAnchor) {
-        
-        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+    private func setPosition(nextPlaneAnchor: ARPlaneAnchor) {
+        var extentX = nextPlaneAnchor.extent.x
+        var extentZ = nextPlaneAnchor.extent.z
+        if(extentX < extentZ){
+            extentX = extentZ
+        }
+        else{
+            extentZ = extentX
+        }
+        let plane = SCNPlane(width: CGFloat(extentX), height: CGFloat(extentZ))
         
         planeNode?.geometry = plane
+        let x = nextPlaneAnchor.center.x
+        let y = nextPlaneAnchor.center.z
+        planeNode?.simdPosition = float3(x: x, y: 0, z: y)
         
         hasRendered = true
+    }
+    
+    private func setPlaneNodeColor(color : UIColor){
+        planeNode?.geometry?.firstMaterial?.diffuse.contents = color
     }
     
     private func nodeWidth(node: SCNNode) -> Float{
